@@ -26,3 +26,9 @@ _The app is built according to Robin Heinze's tutorial,
 ```
 
 Note new-arch, expo-router, workflow, mst.
+
+- Start the app on an Android device via USB cable:
+
+```
+npx expo run:android
+```

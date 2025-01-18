@@ -22,4 +22,5 @@ export const QuestionModel = types
 export interface Question extends Instance<typeof QuestionModel> {}
 export interface QuestionSnapshotOut extends SnapshotOut<typeof QuestionModel> {}
 export interface QuestionSnapshotIn extends SnapshotIn<typeof QuestionModel> {}
-export const createQuestionDefaultModel = () => types.optional(QuestionModel, {})
+export const createQuestionDefaultModel = () =>
+  types.optional(QuestionModel, { id: "0", type: "multiple", difficulty: "easy" })
