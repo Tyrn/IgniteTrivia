@@ -30,5 +30,5 @@ export const createQuestionDefaultModel = () =>
     difficulty: "easy",
     question: undefined,
     correctAnswer: undefined,
-    incorrectAnswers: undefined,
+    incorrectAnswers: [],
   })
