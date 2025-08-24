@@ -14,6 +14,7 @@ export const QuestionModel = types
     question: types.maybe(types.string),
     correctAnswer: types.maybe(types.string),
     incorrectAnswers: types.optional(types.array(types.string), []),
+    guess: types.maybe(types.string),
   })
   .actions(withSetPropAction)
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars

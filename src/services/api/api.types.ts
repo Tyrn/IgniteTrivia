@@ -2,6 +2,7 @@
  * These types indicate the shape of the data you expect to receive from your
  * API endpoint, assuming it's a JSON object like we have.
  */
+/*
 export interface EpisodeItem {
   title: string
   pubDate: string
@@ -33,7 +34,13 @@ export interface ApiFeedResponse {
   }
   items: EpisodeItem[]
 }
+*/
+import { GeneralApiProblem } from "./apiProblem"
+import { QuestionSnapshotOut } from "../../models"
 
+export type GetQuestionsResult =
+  | { kind: "ok"; questions: QuestionSnapshotOut[] }
+  | GeneralApiProblem
 /**
  * The options used to configure apisauce.
  */
