@@ -1,8 +1,8 @@
 import { Instance, SnapshotIn, SnapshotOut, types } from "mobx-state-tree"
 import { withSetPropAction } from "./helpers/withSetPropAction"
 import { QuestionModel } from "./Question"
-import { GetQuestionsResult, api } from "../services/api"
-import { errorTron } from "../utils/logger"
+import { GetQuestionsResult, api } from "@/services/api"
+import { errorTron } from "@/utils/logger"
 /**
  * Model description here for TypeScript hints.
  */

@@ -6,13 +6,13 @@
  * documentation for more details.
  */
 import { ApiResponse, ApisauceInstance, create } from "apisauce"
-import Config from "../../config"
+import Config from "@/config"
 import type { ApiConfig } from "./api.types"
 import * as uuid from "react-native-uuid"
-import { QuestionSnapshotOut } from "../../models"
+import { QuestionSnapshotOut } from "@/models"
 import { getGeneralApiProblem } from "./apiProblem"
 import * as Types from "./api.types"
-import { logTron } from "../../utils/logger"
+import { logTron } from "@/utils/logger"
 
 const API_PAGE_SIZE = 50
 
