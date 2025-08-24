@@ -12,6 +12,7 @@ import * as uuid from "react-native-uuid"
 import { QuestionSnapshotOut } from "../../models"
 import { getGeneralApiProblem } from "./apiProblem"
 import * as Types from "./api.types"
+import { logTron } from "../../utils/logger"
 
 const API_PAGE_SIZE = 50
 
@@ -81,8 +82,7 @@ export class Api {
       const convertedQuestions: QuestionSnapshotOut[] = rawQuestions.map(convertQuestion)
       return { kind: "ok", questions: convertedQuestions }
     } catch (e) {
-      // eslint-disable-next-line
-      __DEV__ && console.tron.log(e.message)
+      logTron(e.message)
       return { kind: "bad-data" }
     }
   }

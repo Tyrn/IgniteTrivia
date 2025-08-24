@@ -2,7 +2,7 @@ import { Instance, SnapshotIn, SnapshotOut, types } from "mobx-state-tree"
 import { withSetPropAction } from "./helpers/withSetPropAction"
 import { QuestionModel } from "./Question"
 import { GetQuestionsResult, api } from "../services/api"
-
+import { errorTron } from "../utils/logger"
 /**
  * Model description here for TypeScript hints.
  */
@@ -20,7 +20,7 @@ export const QuestionStoreModel = types
         self.setProp("questions", result.questions)
       } else {
         // eslint-disable-next-line
-        __DEV__ && console.tron.error(`Error fetching questions: ${JSON.stringify(result)}`, [])
+        errorTron(`Error fetching questions: ${JSON.stringify(result)}`, [])
       }
     },
   }))
