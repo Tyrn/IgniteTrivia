@@ -6,7 +6,15 @@ import { withSetPropAction } from "./helpers/withSetPropAction"
  */
 export const QuestionModel = types
   .model("Question")
-  .props({})
+  .props({
+    id: types.identifier,
+    category: types.maybe(types.string),
+    type: types.enumeration(["multiple", "boolean"]),
+    difficulty: types.enumeration(["easy", "medium", "hard"]),
+    question: types.maybe(types.string),
+    correctAnswer: types.maybe(types.string),
+    incorrectAnswers: types.optional(types.array(types.string), []),
+  })
   .actions(withSetPropAction)
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
@@ -14,4 +22,13 @@ export const QuestionModel = types
 export interface Question extends Instance<typeof QuestionModel> {}
 export interface QuestionSnapshotOut extends SnapshotOut<typeof QuestionModel> {}
 export interface QuestionSnapshotIn extends SnapshotIn<typeof QuestionModel> {}
-export const createQuestionDefaultModel = () => types.optional(QuestionModel, {})
+export const createQuestionDefaultModel = () =>
+  types.optional(QuestionModel, {
+    id: "0",
+    category: undefined,
+    type: "multiple",
+    difficulty: "easy",
+    question: undefined,
+    correctAnswer: undefined,
+    incorrectAnswers: undefined,
+  })
